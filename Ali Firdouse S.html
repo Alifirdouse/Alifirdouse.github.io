@@ -1,0 +1,316 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Ali Firdouse S</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow reading column; hero pairs a name with a live "query" card; projects as ledger rows tagged by medallion tier (bronze → silver → gold = raw → clean → insight). */
+:root{
+  --bg:#EEF2F4; --surface:#FFFFFF; --ink:#13212C; --muted:#56656F; --line:#D4DCE1;
+  --accent:#0E7C7B; --accent-soft:#D6ECEA; --gold:#B7861A; --silver:#7A8791; --bronze:#A2603A;
+  --code-bg:#13212C; --code-fg:#DDE8EC; --code-key:#6FD3C7; --code-str:#F0C674; --code-dim:#7E929C;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E171D; --surface:#15222A; --ink:#E4ECEF; --muted:#94A5AE; --line:#24343D;
+  --accent:#4FC3B6; --accent-soft:#163A3A; --gold:#E0B04A; --silver:#A9B6BE; --bronze:#D08A60;
+  --code-bg:#0A1216; --code-fg:#DDE8EC; --code-key:#6FD3C7; --code-str:#F0C674; --code-dim:#6C808A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E171D; --surface:#15222A; --ink:#E4ECEF; --muted:#94A5AE; --line:#24343D;
+  --accent:#4FC3B6; --accent-soft:#163A3A; --gold:#E0B04A; --silver:#A9B6BE; --bronze:#D08A60;
+  --code-bg:#0A1216; --code-fg:#DDE8EC; --code-key:#6FD3C7; --code-str:#F0C674; --code-dim:#6C808A; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--body);padding-inline:20px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.label{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:10px;font:600 .95rem var(--display);color:var(--ink);text-decoration:none}
+.mark span{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;background:var(--ink);color:var(--bg);font:800 .85rem var(--display)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{color:var(--muted);text-decoration:none;font-size:.9rem}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding-block:56px 72px}
+.hero > *{min-width:0}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800;letter-spacing:-.03em;margin-block:14px 18px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:34ch;margin:0 0 28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:8px;font:500 .92rem var(--body);text-decoration:none;border:1px solid var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+
+.query{background:var(--code-bg);color:var(--code-fg);border-radius:12px;padding:22px 22px 18px;font:400 .86rem/1.75 var(--mono);overflow-x:auto;box-shadow:0 18px 40px -24px rgba(10,20,28,.55)}
+.query .bar{display:flex;gap:6px;margin-bottom:14px}
+.query .bar i{width:9px;height:9px;border-radius:50%;background:var(--code-dim);opacity:.6}
+.query pre{margin:0;white-space:pre}
+.k{color:var(--code-key)} .s{color:var(--code-str)} .c{color:var(--code-dim)}
+.cursor{display:inline-block;width:8px;height:1em;background:var(--code-key);vertical-align:-2px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* sections */
+section{padding-block:64px;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+.sec-head h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:600;letter-spacing:-.02em}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about > *{min-width:0}
+.about p{margin:0 0 14px;max-width:62ch}
+.tiers{display:grid;gap:10px;align-content:start}
+.tier{display:grid;grid-template-columns:76px 1fr;gap:14px;align-items:baseline;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.tier b{font:500 .72rem var(--mono);letter-spacing:.1em;text-transform:uppercase}
+.tier span{font-size:.92rem;color:var(--muted)}
+.t-bronze b{color:var(--bronze)} .t-silver b{color:var(--silver)} .t-gold b{color:var(--gold)}
+
+/* projects */
+.projects{display:grid;gap:0}
+.proj{display:grid;grid-template-columns:1fr 1.5fr;gap:36px;padding-block:32px;border-bottom:1px solid var(--line)}
+.proj:first-child{padding-top:0}
+.proj > *{min-width:0}
+.proj .meta{display:flex;flex-direction:column;gap:12px}
+.proj h3{font-size:1.4rem;font-weight:600;letter-spacing:-.01em}
+.tag{align-self:flex-start;font:500 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+.proj p{margin:0 0 14px;max-width:62ch}
+.proj dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0 0 16px;font-size:.92rem}
+.proj dt{font:500 .72rem/1.9 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.proj dd{margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font:400 .78rem var(--mono);padding:4px 9px;border:1px solid var(--line);border-radius:6px;color:var(--muted);background:var(--surface)}
+.repo{font:500 .85rem var(--mono)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 20px}
+.skills > div{min-width:0}
+.skills h3{font:600 1rem var(--display);margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--ink)}
+.skills ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;font-size:.94rem}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start}
+.contact > *{min-width:0}
+.contact h2{font-size:clamp(2rem,5vw,3rem);font-weight:800;letter-spacing:-.03em}
+.contact p{color:var(--muted);max-width:40ch}
+.rows{display:grid;gap:0;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:90px 1fr auto;gap:14px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.row .val{font:500 .95rem var(--mono);overflow-wrap:anywhere;user-select:all}
+.row .val a{color:var(--ink);text-decoration:none}
+.row .val a:hover{color:var(--accent)}
+.copy{font:500 .75rem var(--mono);padding:6px 10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.copy:hover{color:var(--ink);border-color:var(--ink)}
+footer{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);font:400 .8rem var(--mono)}
+
+@media (max-width:760px){
+  .hero,.about,.proj,.contact{grid-template-columns:1fr;gap:28px}
+  .hero{padding-block:28px 48px}
+  .skills{grid-template-columns:repeat(2,1fr)}
+  nav ul{gap:14px}
+  section{padding-block:48px}
+}
+@media (max-width:420px){
+  .skills{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr auto}
+  .row .label{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}.btn:hover{transform:none}}
+</style>
+
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top"><span>AF</span>Ali Firdouse S</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" id="top">
+    <div>
+      <div class="label">L2 Support · Full Stack (MERN) · Gen AI · Data</div>
+      <h1>From bug report<br>to <em>shipped fix</em>.</h1>
+      <p class="lead">I keep production systems healthy, build full-stack MERN apps and Gen AI features, and turn messy data into answers.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See projects</a>
+        <a class="btn ghost" href="https://github.com/Alifirdouse" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="query" aria-label="Profile summary written as a SQL query">
+      <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="k">SELECT</span> name, role, company, stack
+<span class="k">FROM</span>   engineers
+<span class="k">WHERE</span>  name = <span class="s">'Ali Firdouse S'</span>;
+
+<span class="c">-- 1 row returned</span>
+name     <span class="s">Ali Firdouse S</span>
+role     <span class="s">L2 Support Engineer</span>
+company  <span class="s">CareStack</span>
+stack    <span class="s">Azure, GitLab, SQL,</span>
+         <span class="s">Prometheus, Loki,</span>
+         <span class="s">Grafana, Kafka</span>
+build    <span class="s">MERN, Gen AI</span>
+data     <span class="s">Python, Power BI, Fabric</span> <span class="cursor"></span></pre>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="sec-head"><h2>About</h2><span class="label">How I work</span></div>
+    <div class="about">
+      <div>
+        <p>I work as an L2 Support Engineer at CareStack, where I investigate production issues, write SQL data fixes, and watch system health through Prometheus, Loki and Grafana across Azure and Kafka-based services.</p>
+        <p>I'm also a full-stack developer working with the MERN stack (MongoDB, Express, React, Node.js) and building Gen AI features on top of large language models.</p>
+        <p>On the data side, I've built a Lakehouse pipeline in Microsoft Fabric that merges SQL, Excel, JSON, CSV and XML sources into a Power BI dashboard, trained regression models to forecast crime hotspots, and written SQL to profile thousands of FIFA players.</p>
+        <p>I care about the boring parts done well: clean joins, honest charts, and models evaluated with the right metric. My work lives on GitHub as notebooks, SQL scripts and write-ups.</p>
+      </div>
+      <div class="tiers" aria-label="Medallion architecture tiers">
+        <div class="tier t-bronze"><b>Bronze</b><span>Ingest raw files from every source, untouched.</span></div>
+        <div class="tier t-silver"><b>Silver</b><span>Clean, type, deduplicate and join.</span></div>
+        <div class="tier t-gold"><b>Gold</b><span>Model-ready tables and dashboards people use.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head"><h2>Experience</h2><span class="label">Current role</span></div>
+    <article class="proj">
+      <div class="meta">
+        <span class="tag">Present</span>
+        <h3>L2 Support Engineer</h3>
+        <span class="repo">CareStack</span>
+      </div>
+      <div>
+        <p>Second-line support for CareStack's production platform: taking escalated issues from first-line support, finding the root cause, and fixing it.</p>
+        <dl>
+          <dt>Data fixes</dt><dd>Writing and running SQL to correct production data safely</dd>
+          <dt>Monitoring</dt><dd>Tracking metrics in Prometheus, searching logs in Loki and building Grafana dashboards</dd>
+          <dt>Platform</dt><dd>Working across Azure, Kafka message streams and GitLab</dd>
+        </dl>
+        <div class="chips"><span>Azure</span><span>GitLab</span><span>SQL</span><span>Prometheus</span><span>Loki</span><span>Grafana</span><span>Kafka</span></div>
+      </div>
+    </article>
+  </section>
+
+  <section id="work">
+    <div class="sec-head"><h2>Selected projects</h2><span class="label">Pinned on GitHub</span></div>
+    <div class="projects">
+
+      <article class="proj">
+        <div class="meta">
+          <span class="tag">Data engineering · BI</span>
+          <h3>Uber Performance Analysis with Microsoft Fabric</h3>
+          <a class="repo" href="https://github.com/Alifirdouse/Uber-Performance-Analysis-with-MS-Fabric" target="_blank" rel="noopener">View repo ↗</a>
+        </div>
+        <div>
+          <p>An end-to-end pipeline that pulls Uber operational data from five source formats into a Lakehouse and serves an interactive Power BI dashboard.</p>
+          <dl>
+            <dt>Method</dt><dd>Medallion architecture (Bronze, Silver, Gold) with Dataflow Gen2, automated pipelines and an on-premises gateway</dd>
+            <dt>Insight</dt><dd>Weekday vs weekend ride patterns, revenue distribution, long-distance trips, and driver earnings, ratings and fare per km</dd>
+          </dl>
+          <div class="chips"><span>Microsoft Fabric</span><span>Power BI</span><span>Dataflow Gen2</span><span>Lakehouse</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta">
+          <span class="tag">Machine learning</span>
+          <h3>Crime Trend Prediction with EDA and Regression Models</h3>
+          <a class="repo" href="https://github.com/Alifirdouse/Crime-Trend-Prediction-with-EDA-and-Regression-Models-" target="_blank" rel="noopener">View repo ↗</a>
+        </div>
+        <div>
+          <p>Analyses historical crime records to find patterns and forecast high-risk areas, so patrol resources can be placed before incidents happen.</p>
+          <dl>
+            <dt>Method</dt><dd>EDA on time, location and crime type, then four regressors compared on RMSE</dd>
+            <dt>Insight</dt><dd>Weapon use, time of occurrence and victim age were the strongest predictors</dd>
+          </dl>
+          <div class="chips"><span>Python</span><span>Decision Tree</span><span>Random Forest</span><span>Gradient Boosting</span><span>LightGBM</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta">
+          <span class="tag">SQL analytics</span>
+          <h3>FIFA Player and Team Analysis</h3>
+          <a class="repo" href="https://github.com/Alifirdouse/Data-analysis-assignment" target="_blank" rel="noopener">View repo ↗</a>
+        </div>
+        <div>
+          <p>SQL queries over a FIFA dataset of players, teams, leagues and market values to support scouting and squad decisions.</p>
+          <dl>
+            <dt>Method</dt><dd>Position-wise rating and potential analysis, squad value and average rating by team</dd>
+            <dt>Output</dt><dd>Top-performer summaries, league distribution and market value trends</dd>
+          </dl>
+          <div class="chips"><span>SQL</span><span>MySQL / PostgreSQL</span><span>CSV</span></div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <div class="meta">
+          <span class="tag">Exploratory analysis</span>
+          <h3>Breast Cancer Dataset Analysis</h3>
+          <a class="repo" href="https://github.com/Alifirdouse/Breast-Cancer-Dataset-Analysis" target="_blank" rel="noopener">View repo ↗</a>
+        </div>
+        <div>
+          <p>Exploration of the scikit-learn Wisconsin dataset, 30 numeric cell-nucleus features labelled malignant or benign, prepared as the base for a classifier.</p>
+          <dl>
+            <dt>Method</dt><dd>Summary statistics, class distribution and imbalance check in pandas</dd>
+            <dt>Output</dt><dd>A clean, model-ready frame and notes on class balance</dd>
+          </dl>
+          <div class="chips"><span>Python</span><span>pandas</span><span>scikit-learn</span><span>Jupyter</span></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><h2>Toolkit</h2><span class="label">What I use</span></div>
+    <div class="skills">
+      <div><h3>Full stack (MERN)</h3><ul><li>MongoDB</li><li>Express.js</li><li>React</li><li>Node.js</li></ul></div>
+      <div><h3>Gen AI</h3><ul><li>LLM-powered features</li><li>Prompt engineering</li><li>AI APIs integration</li></ul></div>
+      <div><h3>Support &amp; ops</h3><ul><li>SQL data fixes</li><li>Prometheus</li><li>Loki</li><li>Grafana</li></ul></div>
+      <div><h3>Cloud &amp; platform</h3><ul><li>Azure</li><li>Kafka</li><li>GitLab</li><li>Git &amp; GitHub</li></ul></div>
+      <div><h3>Data &amp; ML</h3><ul><li>Python, pandas</li><li>scikit-learn, LightGBM</li><li>Jupyter Notebook</li><li>MySQL / PostgreSQL</li></ul></div>
+      <div><h3>BI</h3><ul><li>Power BI</li><li>Microsoft Fabric</li><li>Dataflow Gen2</li><li>Lakehouse / Medallion</li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact">
+      <div>
+        <div class="label">Contact</div>
+        <h2>Let's work on your data.</h2>
+        <p>Open to full-stack, Gen AI, support engineering and data roles. Email is the fastest way to reach me.</p>
+      </div>
+      <div class="rows">
+        <div class="row"><span class="label">Email</span><span class="val" id="v-email"><a href="mailto:s.alifirdouse@gmail.com">s.alifirdouse@gmail.com</a></span><button class="copy" id="c-email" data-copy="s.alifirdouse@gmail.com">Copy</button></div>
+        <div class="row"><span class="label">Phone</span><span class="val" id="v-phone"><a href="tel:+918848755317">+91 88487 55317</a></span><button class="copy" id="c-phone" data-copy="+918848755317">Copy</button></div>
+        <div class="row"><span class="label">GitHub</span><span class="val"><a href="https://github.com/Alifirdouse" target="_blank" rel="noopener">github.com/Alifirdouse</a></span><button class="copy" id="c-gh" data-copy="https://github.com/Alifirdouse">Copy</button></div>
+        <div class="row"><span class="label">LinkedIn</span><span class="val"><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn profile</a></span><button class="copy" id="c-li" data-copy="https://www.linkedin.com/feed/">Copy</button></div>
+      </div>
+    </div>
+  </section>
+
+  <footer><span>© 2026 Ali Firdouse S</span><span>Built with real data, cleaned twice.</span></footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.getAttribute('data-copy');
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1500)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(b.previousElementSibling);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Selected'}
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  });
+});
+</script>
+
+</body></html>
