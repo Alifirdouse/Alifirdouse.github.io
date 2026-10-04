@@ -1,4 +1,9 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ali Firdouse S — L2 Support Engineer at CareStack, full-stack MERN and Gen AI developer, data analyst.">
 <title>Ali Firdouse S</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -123,6 +128,9 @@ footer{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;jus
 @media (prefers-reduced-motion:reduce){.cursor{animation:none}.btn:hover{transform:none}}
 </style>
 
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
 <div class="wrap">
   <nav>
     <a class="mark" href="#top"><span>AF</span>Ali Firdouse S</a>
@@ -192,7 +200,11 @@ data     <span class="s">Python, Power BI, Fabric</span> <span class="cursor"></
         <p>Second-line support for CareStack's production platform: taking escalated issues from first-line support, finding the root cause, and fixing it.</p>
         <dl>
           <dt>Data fixes</dt><dd>Writing and running SQL to correct production data safely</dd>
-          <dt>Monitoring</dt><dd>Tracking metrics in Prometheus, searching logs in Loki and building Grafana dashboards</dd>
+          <dt>Tickets</dt><dd>Handling service requests, bug reports and customer clarifications through to resolution</dd>
+          <dt>Monitoring</dt><dd>Tracking lag and system health with Prometheus metrics, Loki logs and Grafana dashboards</dd>
+          <dt>Onboarding</dt><dd>Supporting new customer onboarding on the platform</dd>
+          <dt>Automation</dt><dd>Building internal tools that automate repetitive support tasks</dd>
+          <dt>CI/CD</dt><dd>Setting up GitLab pipelines for merge requests</dd>
           <dt>Platform</dt><dd>Working across Azure, Kafka message streams and GitLab</dd>
         </dl>
         <div class="chips"><span>Azure</span><span>GitLab</span><span>SQL</span><span>Prometheus</span><span>Loki</span><span>Grafana</span><span>Kafka</span></div>
@@ -201,8 +213,25 @@ data     <span class="s">Python, Power BI, Fabric</span> <span class="cursor"></
   </section>
 
   <section id="work">
-    <div class="sec-head"><h2>Selected projects</h2><span class="label">Pinned on GitHub</span></div>
+    <div class="sec-head"><h2>Selected projects</h2><span class="label">On GitHub</span></div>
     <div class="projects">
+
+      <article class="proj">
+        <div class="meta">
+          <span class="tag">Full stack · Cloud</span>
+          <h3>Kadai Market</h3>
+          <a class="repo" href="https://github.com/Alifirdouse/kadai-market" target="_blank" rel="noopener">View repo ↗</a>
+        </div>
+        <div>
+          <p>A multi-vendor marketplace for homegrown Kerala food brands. Customers shop across many sellers in one cart, sellers run their own storefronts, and admins approve brands and track sales.</p>
+          <dl>
+            <dt>Customers</dt><dd>Search and filter by stock, category, price and rating, a multi-seller cart, UPI and card payments through Razorpay, and order tracking</dd>
+            <dt>Sellers</dt><dd>Brand registration with admin approval, product and inventory management, order fulfilment</dd>
+            <dt>Platform</dt><dd>JWT auth, a background worker on Azure Service Bus, Azure Container Apps defined in Bicep, and a GitHub Actions CI/CD pipeline</dd>
+          </dl>
+          <div class="chips"><span>Next.js 14</span><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Razorpay</span><span>Azure</span><span>GitHub Actions</span></div>
+        </div>
+      </article>
 
       <article class="proj">
         <div class="meta">
@@ -294,6 +323,7 @@ data     <span class="s">Python, Power BI, Fabric</span> <span class="cursor"></
         <div class="row"><span class="label">Email</span><span class="val" id="v-email"><a href="mailto:s.alifirdouse@gmail.com">s.alifirdouse@gmail.com</a></span><button class="copy" id="c-email" data-copy="s.alifirdouse@gmail.com">Copy</button></div>
         <div class="row"><span class="label">Phone</span><span class="val" id="v-phone"><a href="tel:+918848755317">+91 88487 55317</a></span><button class="copy" id="c-phone" data-copy="+918848755317">Copy</button></div>
         <div class="row"><span class="label">GitHub</span><span class="val"><a href="https://github.com/Alifirdouse" target="_blank" rel="noopener">github.com/Alifirdouse</a></span><button class="copy" id="c-gh" data-copy="https://github.com/Alifirdouse">Copy</button></div>
+        <div class="row"><span class="label">GitLab</span><span class="val"><a href="https://gitlab.com/s.alifirdouse" target="_blank" rel="noopener">gitlab.com/s.alifirdouse</a></span><button class="copy" id="c-gl" data-copy="https://gitlab.com/s.alifirdouse">Copy</button></div>
         <div class="row"><span class="label">LinkedIn</span><span class="val"><a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener">LinkedIn profile</a></span><button class="copy" id="c-li" data-copy="https://www.linkedin.com/feed/">Copy</button></div>
       </div>
     </div>
@@ -312,5 +342,5 @@ document.querySelectorAll('.copy').forEach(function(b){
   });
 });
 </script>
-
-</body></html>
+</body>
+</html>
